@@ -4,7 +4,7 @@ import bannerImage from '../../assets/banner.png'
 
 const Banner = () => {
   return (
-    <div className='container mx-auto px-4 my-8 sm:my-12'>
+    <div className='container mx-auto my-8 sm:my-12'>
       <div className='bg-[#15171e] rounded-2xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10'>
         
         

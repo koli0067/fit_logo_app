@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/logo.png";
+import NavLink from "./Navlink";
+
 
 const Navbar = () => {
   const navLinks = [
-    { name: "workOuts", href: "/workOuts" },
-    { name: "myPlan", href: "/myPlan" },
+    { name: "Workout", href: "/workOuts" },
+    { name: "My Plan", href: "/myPlan" },
   ];
 
   const planCount = 0;
@@ -14,6 +16,7 @@ const Navbar = () => {
   return (
     <nav className="bg-[#15171d] py-4 shadow-sm">
       <div className="navbar container mx-auto px-4">
+       
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -39,55 +42,47 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={-1}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box border border-gray-800 bg-[#15171d] p-2 text-white shadow"
             >
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white focus:!text-[#c2f800] active:!text-[#c2f800]"
-                  >
-                    {link.name}
-                  </Link>
+                  <NavLink href={link.href}>{link.name}</NavLink>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="flex items-center gap-2 text-2xl font-semibold text-white">
-            <Image src={logo} alt="Company Logo" />
+          <Link href="/" className="flex items-center gap-2 text-2xl font-semibold text-white">
+            <Image src={logo} alt="Fitlog Logo" width={32} height={32} />
             FITLOG
-          </div>
+          </Link>
         </div>
 
-        {/* Desktop Menu */}
+        
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-[18px] font-medium text-white">
-            
+          <ul className="menu menu-horizontal gap-6 px-1 text-[18px] font-medium">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-white focus:!text-[#c2f800] active:!text-[#c2f800]"
-                >
-                  {link.name}
-                </Link>
+                <NavLink href={link.href}>{link.name}</NavLink>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="navbar-end gap-6">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-300">Plan</span>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#a3e635] text-xs font-bold text-black">
+        
+        <div className="navbar-end gap-3">
+          
+          <div className="flex items-center gap-2 rounded-full  px-3 py-1 text-sm font-semibold text-white">
+            <span>Plan</span>
+            <span className="flex h-5 w-5 items-center justify-center bg-[#ccff00] rounded-full text-xs text-black">
               {planCount}
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-300">Saved</span>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gray-500 text-xs font-bold text-white">
+          
+          <div className="flex items-center gap-2 px-3 py-1 text-sm font-semibold text-white">
+            <span>Saved</span>
+            <span className="flex h-5 w-5 items-center justify-center border-gray-500 bg-gray-700 border rounded-full  text-xs">
               {savedCount}
             </span>
           </div>
