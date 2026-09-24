@@ -1,4 +1,4 @@
-import LibraryImg from '../../components/homepage/LibraryImg';
+import ImgLibrary from '../../components/homepage/ImgLibrary';
 import Banner from '../../components/homepage/Banner';
 import React from 'react'
 
@@ -9,7 +9,7 @@ const AppsPage = () => {
     <div className='container mx-auto my-[80px]'>
    
       <Banner></Banner>
-      <LibraryImg></LibraryImg>
+      <ImgLibrary></ImgLibrary> 
 
     </div>
   

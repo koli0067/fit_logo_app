@@ -6,7 +6,7 @@ import NavLink from "./Navlink";
 
 const Navbar = () => {
   const navLinks = [
-    { name: "Workout", href: "/workOuts" },
+    { name: "Workouts", href: "/workouts" },
     { name: "My Plan", href: "/myPlan" },
   ];
 
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#15171d] py-4 shadow-sm">
-      <div className="navbar container mx-auto px-4">
+      <div className="navbar container mx-auto">
        
         <div className="navbar-start">
           <div className="dropdown">

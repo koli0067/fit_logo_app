@@ -5,14 +5,24 @@ import FitCard from '../shared/FitCard';
 
 
 const GetLibraryData = async () => {
-
+  try {
     const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
-    const data = await res.json();
-    return data;
+    
+    if (!res.ok) {
+      console.error('Failed to fetch data, status:', res.status);
+      return [];
+    }
 
+    const data = await res.json();
+    return Array.isArray(data) ? data : [];
+  } catch (error) {
+    console.error('Error fetching library data:', error);
+    return [];
+  }
 }
 
-const LibraryImg = async() => {
+
+const ImgLibrary = async() => {
 
   const data = await GetLibraryData();
     
@@ -25,7 +35,7 @@ const LibraryImg = async() => {
 
             
             {data.length > 0 ? (
-        <div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 my-14'>
+        <div className=' grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 my-14'>
           {data.map((item: IWorkout) => (
             <FitCard key={item.id} item={item} />
           ))}
@@ -36,9 +46,8 @@ const LibraryImg = async() => {
                 </div>
             )}
             </div>
-   
   ) 
   
 }
 
-export default LibraryImg
+export default ImgLibrary;
