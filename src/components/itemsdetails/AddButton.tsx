@@ -1,18 +1,27 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { IWorkout } from '../../type/workout';
 import { useFitLogContext } from '../../context/ContextItems';
+import { toast } from 'react-toastify';
 
 const AddButton = ({ item }: { item: IWorkout }) => {
   const { addButton, setAddButton } = useFitLogContext();
+  const router = useRouter();
 
   const isAdded = addButton.some((i: any) => String(i.id) === String(item.id));
 
   const handleAddButton = () => {
-    if (!isAdded) {
-      setAddButton((prev: any[]) => [...prev, item]);
+    if (isAdded) {
+      // ইতোমধ্যে অ্যাড করা থাকলে অ্যালার্ট দেখাবে
+     toast.error('This workout is already added to your plan!');
+      return;
     }
+
+    // প্রথমবার ক্লিক করলে লিস্টে অ্যাড করবে এবং My Plan পেজে নিয়ে যাবে
+    setAddButton((prev: any[]) => [...prev, item]);
+    router.push('/my-plan');
   };
 
   return (
@@ -20,20 +29,11 @@ const AddButton = ({ item }: { item: IWorkout }) => {
       onClick={handleAddButton}
       className={`flex-1 font-semibold py-2.5 rounded-lg transition duration-200 text-sm flex items-center justify-center gap-2 ${
         isAdded
-          ? 'bg-lime-500/20 text-lime-400 border border-lime-400/30'
+          ? 'bg-lime-500/20 text-lime-400 border border-lime-400/30 cursor-not-allowed'
           : 'bg-lime-400 hover:bg-lime-500 text-black'
       }`}
     >
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
         <line x1="16" y1="2" x2="16" y2="6"></line>
         <line x1="8" y1="2" x2="8" y2="6"></line>

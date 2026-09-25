@@ -2,16 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/logo.png";
 import NavLink from "./Navlink";
+import NavCounters from "./NavCounters";
 
 
 const Navbar = () => {
   const navLinks = [
     { name: "Workouts", href: "/workouts" },
-    { name: "My Plan", href: "/myPlan" },
+    { name: "My Plan", href: "/my-plan" },
   ];
 
-  const planCount = 0;
-  const savedCount = 0;
+  // const planCount = 0;
+  // const savedCount = 0;
 
   return (
     <nav className="bg-[#15171d] py-4 shadow-sm">
@@ -68,9 +69,10 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-
+      
+      <NavCounters />
         
-        <div className="navbar-end gap-3">
+        {/* <div className="navbar-end gap-3">
           
           <div className="flex items-center gap-2 rounded-full  px-3 py-1 text-sm font-semibold text-white">
             <span>Plan</span>
@@ -86,7 +88,7 @@ const Navbar = () => {
               {savedCount}
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
