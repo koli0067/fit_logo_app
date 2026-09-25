@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/shared/Navbar.tsx";
 import Footer from "../components/shared/Footer";
+import ContextProvider from "../context/ContextItems.tsx";
 
 
 const geistSans = Geist({
@@ -27,13 +28,15 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col bg-black">
         
-        
-        <Navbar></Navbar>
+        <ContextProvider>
+          <Navbar></Navbar>
          
         <main>
           {children}
         </main>
           <Footer></Footer>
+        </ContextProvider>
+        
         </body>
     </html>
   );
