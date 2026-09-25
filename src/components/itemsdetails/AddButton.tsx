@@ -14,14 +14,13 @@ const AddButton = ({ item }: { item: IWorkout }) => {
 
   const handleAddButton = () => {
     if (isAdded) {
-      // ইতোমধ্যে অ্যাড করা থাকলে অ্যালার্ট দেখাবে
+
      toast.error('This workout is already added to your plan!');
       return;
     }
 
-    // প্রথমবার ক্লিক করলে লিস্টে অ্যাড করবে এবং My Plan পেজে নিয়ে যাবে
     setAddButton((prev: any[]) => [...prev, item]);
-    toast.success('Successfully added to your plan!');
+    toast.success("Added to today's plan");
    
   };
 

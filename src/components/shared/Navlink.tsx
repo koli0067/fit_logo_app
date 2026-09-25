@@ -15,13 +15,13 @@ const Navlink = ({ href, children }: NavLinkProps) => {
   return (
     <Link
       href={href}
-      className={`transition-colors hover:text-[#c2f800] ${
+      className={`px-5 py-2 rounded-full transition-all inline-block ${
         isActive
-          ? "font-semibold text-[#c2f800]"
-          : "text-white"
+          ? "bg-[#18220f] text-[#c2f800] font-semibold"
+          : "text-white hover:bg-[#18220f]/80 hover:text-[#c2f800]"
       }`}
     >
-      {children} 
+      {children}
     </Link>
   );
 };
