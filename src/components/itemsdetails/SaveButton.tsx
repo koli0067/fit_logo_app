@@ -21,7 +21,7 @@ const SaveButton = ({ item }: { item: IWorkout }) => {
 
     // প্রথমবার ক্লিক করলে সেভ করবে এবং My Plan পেজে নিয়ে যাবে
     setSaveButton((prev: any[]) => [...prev, item]);
-    router.push('/my-plan');
+    toast.success('Successfully added to your save!');
   };
 
   return (

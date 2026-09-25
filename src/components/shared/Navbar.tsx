@@ -11,11 +11,8 @@ const Navbar = () => {
     { name: "My Plan", href: "/my-plan" },
   ];
 
-  // const planCount = 0;
-  // const savedCount = 0;
-
   return (
-    <nav className="bg-[#15171d] py-4 shadow-sm">
+    <nav className="bg-[#15171d] py-4 shadow-sm relative z-20">
       <div className="navbar container mx-auto">
        
         <div className="navbar-start">
@@ -72,23 +69,6 @@ const Navbar = () => {
       
       <NavCounters />
         
-        {/* <div className="navbar-end gap-3">
-          
-          <div className="flex items-center gap-2 rounded-full  px-3 py-1 text-sm font-semibold text-white">
-            <span>Plan</span>
-            <span className="flex h-5 w-5 items-center justify-center bg-[#ccff00] rounded-full text-xs text-black">
-              {planCount}
-            </span>
-          </div>
-
-          
-          <div className="flex items-center gap-2 px-3 py-1 text-sm font-semibold text-white">
-            <span>Saved</span>
-            <span className="flex h-5 w-5 items-center justify-center border-gray-500 bg-gray-700 border rounded-full  text-xs">
-              {savedCount}
-            </span>
-          </div>
-        </div> */}
       </div>
     </nav>
   );
