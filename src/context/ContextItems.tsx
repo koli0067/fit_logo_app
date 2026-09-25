@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { IWorkout } from '../type/workout';
 
 interface ContextType {
@@ -13,25 +13,9 @@ interface ContextType {
 export const ContextItems = createContext<ContextType | null>(null);
 
 const ContextProvider = ({ children }: { children: ReactNode }) => {
+  // মেমোরি স্টেট (Localstorage তুলে দেওয়া হয়েছে, তাই রিফ্রেশ দিলেই ডাটা মুছে যাবে)
   const [addButton, setAddButton] = useState<IWorkout[]>([]);
   const [saveButton, setSaveButton] = useState<IWorkout[]>([]);
-
-  // LocalStorage থেকে ডাটা লোড করা
-  useEffect(() => {
-    const savedAdd = localStorage.getItem('fitlog_add');
-    const savedSave = localStorage.getItem('fitlog_save');
-    if (savedAdd) setAddButton(JSON.parse(savedAdd));
-    if (savedSave) setSaveButton(JSON.parse(savedSave));
-  }, []);
-
-  // স্টেট পরিবর্তন হলে LocalStorage-এ সেভ করা
-  useEffect(() => {
-    localStorage.setItem('fitlog_add', JSON.stringify(addButton));
-  }, [addButton]);
-
-  useEffect(() => {
-    localStorage.setItem('fitlog_save', JSON.stringify(saveButton));
-  }, [saveButton]);
 
   return (
     <ContextItems.Provider value={{ addButton, setAddButton, saveButton, setSaveButton }}>

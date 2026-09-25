@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { LuX } from "react-icons/lu";
 import Image from 'next/image';
 import Link from 'next/link';
 import { X, Check } from 'lucide-react';
@@ -202,7 +203,7 @@ const MyPlanClient = () => {
                       className="text-gray-500 hover:text-red-400 p-1 transition"
                       aria-label="Remove item"
                     >
-                      <X className="w-5 h-5" />
+                      <LuX className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
