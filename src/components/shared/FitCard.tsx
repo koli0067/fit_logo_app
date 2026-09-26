@@ -29,7 +29,7 @@ const FitCard = ({ item }: IworkProps) => {
     
     <div className="bg-[#15171d] border border-gray-800/60 rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between h-full shadow-lg">
       <div>
-        {/* Top Image Section */}
+       
         <div className="relative w-full h-52 sm:h-56 overflow-hidden">
           <Image
             src={image}

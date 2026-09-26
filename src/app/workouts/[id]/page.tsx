@@ -37,7 +37,7 @@ const ItemPageDetails = async ({ params }: IitemProps) => {
   }
 
   return (
-    <div className="container mx-auto py-8 px-4">
+    <div className="container mx-auto py-8">
       <div className="bg-[#121418] border border-gray-800 rounded-2xl p-6 shadow-2xl text-white">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
@@ -113,7 +113,6 @@ const ItemPageDetails = async ({ params }: IitemProps) => {
               </div>
             </div>
 
-            {/* Context API er addToPlan ebong addToSave er sathe connect korar jonno item prop pass kora hoyeche */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <AddButton item={SingleData} />
               <SaveButton item={SingleData} />

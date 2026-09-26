@@ -13,7 +13,7 @@ interface ContextType {
 export const ContextItems = createContext<ContextType | null>(null);
 
 const ContextProvider = ({ children }: { children: ReactNode }) => {
-  // মেমোরি স্টেট (Localstorage তুলে দেওয়া হয়েছে, তাই রিফ্রেশ দিলেই ডাটা মুছে যাবে)
+
   const [addButton, setAddButton] = useState<IWorkout[]>([]);
   const [saveButton, setSaveButton] = useState<IWorkout[]>([]);
 

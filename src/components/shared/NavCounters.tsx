@@ -13,19 +13,18 @@ const NavCounters = () => {
 
   return (
     <div className="navbar-end gap-3">
-      {/* Plan Count Badge */}
+     
     
         <Link
         href="/my-plan"
-        className="flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold text-white hover:bg-gray-800 transition cursor-pointer select-none bg-gray-900/50"
-      >
+        className="flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold text-white hover:bg-gray-800 transition cursor-pointer select-none bg-gray-900/50">
         <span>Plan</span>
         <span className="flex h-5 w-5 items-center justify-center bg-[#ccff00] rounded-full text-xs font-extrabold text-black">
           {planCount}
         </span>
       </Link>
 
-      {/* Saved Count Badge */}
+     
       <Link
         href="/my-plan"
         className="flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold text-white hover:bg-gray-800 transition cursor-pointer select-none bg-gray-900/50"

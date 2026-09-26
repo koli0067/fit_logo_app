@@ -19,8 +19,8 @@ const Navlink = ({ href, children }: NavLinkProps) => {
         isActive
           ? "bg-[#18220f] text-[#c2f800] font-semibold"
           : "text-white hover:bg-[#18220f]/80 hover:text-[#c2f800]"
-      }`}
-    >
+      }`}>
+        
       {children}
     </Link>
   );

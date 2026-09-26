@@ -7,7 +7,7 @@ import NavCounters from "./NavCounters";
 
 const Navbar = () => {
   const navLinks = [
-    { name: "Workouts", href: "/workouts" },
+    { name: "Workouts", href: "/" },
     { name: "My Plan", href: "/my-plan" },
   ];
 
@@ -40,8 +40,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={-1}
-              className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box border border-gray-800 bg-[#15171d] p-2 text-white shadow"
-            >
+              className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box border border-gray-800 bg-[#15171d] p-2 text-white shadow">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <NavLink href={link.href}>{link.name}</NavLink>

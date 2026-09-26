@@ -14,12 +14,11 @@ const SaveButton = ({ item }: { item: IWorkout }) => {
 
   const handleSaveButton = () => {
     if (isSaved) {
-      // ইতোমধ্যে সেভ করা থাকলে অ্যালার্ট দেখাবে
+      
       toast.error('This workout is already saved!');
       return;
     }
 
-    // প্রথমবার ক্লিক করলে সেভ করবে এবং My Plan পেজে নিয়ে যাবে
     setSaveButton((prev: any[]) => [...prev, item]);
     toast.success("Saved for later");
   };
@@ -31,8 +30,8 @@ const SaveButton = ({ item }: { item: IWorkout }) => {
         isSaved
           ? 'border-gray-600 bg-gray-800 text-lime-400 cursor-not-allowed'
           : 'border-gray-700 bg-transparent hover:bg-gray-800 text-gray-300'
-      }`}
-    >
+      }`}>
+        
       <svg
         width="20"
         height="20"
@@ -41,8 +40,8 @@ const SaveButton = ({ item }: { item: IWorkout }) => {
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
-      >
+        strokeLinejoin="round">
+
         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
       </svg>
       <span>{isSaved ? 'Saved' : 'Save for later'}</span>
