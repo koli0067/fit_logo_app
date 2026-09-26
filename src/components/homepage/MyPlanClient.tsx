@@ -58,15 +58,17 @@ const MyPlanClient = () => {
     }
   };
 
-  const handleRemove = (id: string | number) => {
-    const stringId = String(id);
-    if (activeTab === 'today') {
-      setAddButton((prev) => prev.filter((item) => String(item.id) !== stringId));
-    } else {
-      setSaveButton((prev) => prev.filter((item) => String(item.id) !== stringId));
-    }
+ const handleRemove = (id: string | number) => {
+  const stringId = String(id);
+
+  if (activeTab === 'today') {
+    setAddButton((prev) => prev.filter((item) => String(item.id) !== stringId));
     toast.error("Removed from plan!");
-  };
+  } else {
+    setSaveButton((prev) => prev.filter((item) => String(item.id) !== stringId));
+    toast.error("Removed from saved!");
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#0e1015] text-white py-8 px-6 md:px-12">
